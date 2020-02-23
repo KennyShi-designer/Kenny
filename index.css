@@ -10,11 +10,26 @@ body {
     display: grid;
     grid: auto auto/1fr 1000px 1fr;
 }
+@media (max-width:900px) {
+    body {
+        grid: auto auto auto/1fr 678px 1fr;
+    }
+}
+@media (max-width:678px) {
+    body {
+        grid: auto auto/1fr;
+    }
+}
 header {
     grid-area: 1/1/2/4;
     background: #999;
     text-align: center;
     padding: 30px 0;
+}
+@media (max-width:678px) {
+    header {
+        grid-area: 1/1/2/2;
+    }
 }
 header .avatar {
     width: 62px;
@@ -33,9 +48,20 @@ main {
     display: grid;
     grid: auto/300px 700px;
 }
-
+@media (max-width:678px) {
+    main {
+        grid-area: 2/1/3/2;
+        grid: auto auto/auto;
+        padding: 10px;
+    }
+}
 .column1 {
     grid-area: 1/1/2/2;
+}
+@media (max-width:678px) {
+    .column1 {
+        grid-area: 1/1/2/2;
+    }
 }
 main section{
     display: grid;
@@ -50,6 +76,7 @@ main section > h2 {
     grid-area: 1/2/2/3;
     display: flex;
     align-items: center;
+    font-size: 18px;
 }
 main section > h2::after {
     content: '';
@@ -113,6 +140,12 @@ main section > .iconfont{
     grid-area: 1/2/2/3;
     margin-left: 100px;
 }
+@media (max-width:678px) {
+    .column2 {
+        grid-area: 2/1/3/2;
+        margin: 0;
+    }
+}
 .layout1 .detail{
     list-style: none;
     margin: 0;
@@ -124,6 +157,11 @@ main section > .iconfont{
     align-items: center;
     grid-gap: 10px;
 }
+@media (max-width:678px) {
+    .layout1 .detail > li {
+        grid: auto auto auto/auto auto;
+    }
+}
 .layout1 .detail .date {
     grid-area: 1/1/2/2;
 }
@@ -134,18 +172,32 @@ main section > .iconfont{
 .layout1 .detail .major {
     grid-area: 1/3/2/4;
 }
-.layout1 .detail .second-line{
+.layout1 .detail .bottom{
     grid-area: 2/2/3/4;
     margin: 0;
+}
+@media (max-width:678px) {
+    .layout1 .detail .date {
+        grid-area: 1/1/2/3;
+    }
+    .layout1 .detail h3 {
+        grid-area: 2/1/3/3;
+    }
+    .layout1 .detail .major {
+        grid-area: 1/2/2/3;
+    }
+    .layout1 .detail .bottom{
+        grid-area: 3/1/4/3;
+    }
 }
 .education .detail .edu-linegap {
     padding-top: 30px;
 }
-.w-experience .detail .second-line ul{
+.w-experience .detail .bottom ul{
     padding: 0;
     margin: 0;
 }
-.p-experience .detail .second-line ul{
+.p-experience .detail .bottom ul{
     padding: 0;
     margin: 0;
 }
